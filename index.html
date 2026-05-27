@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deutsch Coach</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="intro">
+          <p class="eyebrow">German Writing Practice</p>
+          <h1 id="app-title">Deutsch Coach</h1>
+          <p class="intro-copy">
+            Write a short German response, check it, and get a score with corrections for common beginner mistakes.
+          </p>
+        </div>
+
+        <div class="prompt-bar">
+          <label for="prompt-select">Practice prompt</label>
+          <select id="prompt-select">
+            <option value="Introduce yourself in 3-5 German sentences.">Introduce yourself</option>
+            <option value="Describe your daily routine in German.">Daily routine</option>
+            <option value="Write about what you did yesterday in German.">Past tense practice</option>
+            <option value="Explain what food you like and dislike in German.">Food preferences</option>
+            <option value="Describe your family or friends in German.">Family and friends</option>
+            <option value="Write about your hobbies and free time in German.">Hobbies</option>
+            <option value="Describe your school, college, or work in German.">School or work</option>
+            <option value="Write about the weather and your plans for today in German.">Weather and plans</option>
+            <option value="Describe your home, room, or city in German.">Home or city</option>
+            <option value="Write a short dialogue for shopping in German.">Shopping dialogue</option>
+            <option value="Write about a trip or holiday in German.">Travel</option>
+            <option value="Explain your opinion about learning German in German.">Opinion</option>
+            <option value="Write about your weekend plans in German.">Weekend plans</option>
+            <option value="Describe a problem and ask for help in German.">Ask for help</option>
+            <option value="Write an email invitation to a friend in German.">Invitation email</option>
+          </select>
+        </div>
+
+        <div class="level-bar" aria-label="German level">
+          <span>Level</span>
+          <div class="level-options">
+            <input type="radio" id="level-a1" name="level" value="A1" checked />
+            <label for="level-a1">A1</label>
+            <input type="radio" id="level-a2" name="level" value="A2" />
+            <label for="level-a2">A2</label>
+            <input type="radio" id="level-b1" name="level" value="B1" />
+            <label for="level-b1">B1</label>
+          </div>
+        </div>
+
+        <p id="current-prompt" class="current-prompt">Introduce yourself in 3-5 German sentences.</p>
+
+        <label class="writing-label" for="german-input">Your German text</label>
+        <textarea
+          id="german-input"
+          spellcheck="false"
+          placeholder="Example: Ich heisse Yusra. Ich komme aus Indien. Ich lerne Deutsch, weil ich neue Sprachen mag."
+        ></textarea>
+
+        <div class="actions">
+          <button id="check-btn" type="button">Check writing</button>
+          <button id="sample-btn" class="secondary" type="button">Try sample</button>
+          <button id="clear-btn" class="ghost" type="button">Clear</button>
+        </div>
+      </section>
+
+      <section class="results" aria-live="polite">
+        <div class="score-panel">
+          <div>
+            <p class="eyebrow">Score</p>
+            <p id="score-value" class="score-value">--</p>
+          </div>
+          <div class="score-meter" aria-hidden="true">
+            <span id="score-fill"></span>
+          </div>
+        </div>
+
+        <article class="theme-box">
+          <div>
+            <p class="eyebrow">Theme Match</p>
+            <h2 id="theme-rating">Not checked yet</h2>
+          </div>
+          <p id="theme-feedback">The app will check whether your answer matches the selected prompt.</p>
+        </article>
+
+        <article class="level-box">
+          <div>
+            <p class="eyebrow">Level Fit</p>
+            <h2 id="level-rating">Not checked yet</h2>
+          </div>
+          <p id="level-feedback">Choose a level to judge the writing against A1, A2, or B1 expectations.</p>
+        </article>
+
+        <div class="feedback-grid">
+          <article>
+            <h2>Corrections</h2>
+            <ul id="corrections-list" class="feedback-list">
+              <li>Write something in German, then press Check writing.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h2>What went well</h2>
+            <ul id="strengths-list" class="feedback-list">
+              <li>Your feedback will appear here.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="rewrite-box">
+          <h2>Suggested rewrite</h2>
+          <p id="rewrite-output">A cleaner version of your text will appear here.</p>
+        </article>
+
+        <article>
+          <h2>Recent practice</h2>
+          <ol id="history-list" class="history-list"></ol>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
