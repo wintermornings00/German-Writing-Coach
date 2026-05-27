@@ -18,7 +18,3 @@ The app includes 15 practice prompts covering introductions, routines, past tens
 - `index.html` - page structure
 - `style.css` - visual design
 - `script.js` - scoring and correction logic
-
-## Notes
-
-This first version works offline except for the background image. The correction and theme checks are rule-based, so they catch common practice patterns but are not as smart as a real AI grammar checker yet.
