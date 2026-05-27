@@ -16,5 +16,5 @@ The app includes 15 practice prompts covering introductions, routines, past tens
 ## Files
 
 - `index.html` - page structure
-- `style.css` - visual design
+- `style.css` -  design
 - `script.js` - scoring and correction logic
